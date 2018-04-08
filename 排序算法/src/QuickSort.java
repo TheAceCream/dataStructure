@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Created by AceCream on 2017/3/19.
  * 快速排序QuickSort （属于交换排序）
@@ -26,16 +28,18 @@ public class QuickSort {
             while (left<right&&value[right]>=key){
                 right--;
             }
+
             if (left<right){
-                value[left] = value[right];
+                value[left]=value[right];
                 left++;
             }
 
             while (left<right&&value[left]<key){
                 left++;
             }
+
             if (left<right){
-                value[right] = value[left];
+                value[right]=value[left];
                 right--;
             }
 
@@ -47,7 +51,7 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        int[] value = {49,38,65,97,76,13,27,49};
+        int[] value = {49,3,65,97,76,13,27,49};
         int start = 0;
         int end = value.length-1;
         quickSort(value,start,end);

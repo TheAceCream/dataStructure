@@ -14,10 +14,11 @@
  *
  */
 public class InsertSort {
+    static int i =100;
+
     public static void main(String[] args) {
             int value[] = {12,3,8,9,2,6,15,9,16,23};
-            InsertSort insertSort = new InsertSort();
-            insertSort.insertSort(value);
+            insertSort(value);
             System.out.print("最终结果 ");
             for (int result : value) {
                 System.out.print(result+" ");
@@ -25,7 +26,7 @@ public class InsertSort {
 
     }
 
-    private void insertSort(int[] value) {
+    private  static void insertSort(int[] value) {
         //temp值待命
         int temp;
         for (int i=1;i<value.length;i++){
