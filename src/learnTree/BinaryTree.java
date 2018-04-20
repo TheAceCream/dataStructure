@@ -9,27 +9,6 @@ import java.util.Scanner;
  * Created by AceCream on 2017/3/14.
  * 二叉树
  */
-class TreeNode {
-    int key = 0; //key 为层序编码
-    String data = null; //data 为数据域
-    boolean isVisited = false;
-    /*树的每一个节点的数据结构都是TreeNode类型，
-    createBinTree里定义的root为TreeNode类型，所以左右孩子也为TreeNode类型，
-    加上二叉树的递归思想，所以所有节点都是TreeNode类型
-     */
-    TreeNode leftChild = null;
-    TreeNode rightChild = null;
-
-    public TreeNode(int key,String data){
-        this.key = key;
-        this.data = data;
-        this.isVisited = false;
-        this.leftChild = null;
-        this.rightChild = null;
-    }
-
-}
-
 public class BinaryTree {
 
     //二叉树通常用树结点结构存储，有时也包含指向唯一父节点的指针
@@ -95,13 +74,23 @@ public class BinaryTree {
     //递归解法：
     //（1）如果二叉树为空，二叉树的深度为0
     //（2）如果二叉树不为空，二叉树的深度 = max(左子树深度， 右子树深度) + 1
-    public int getDepth(TreeNode root){
+//    public int getDepth(TreeNode root){
+//        if (root==null){
+//            return 0;
+//        }else {
+//            int depthLeft = getDepth(root.leftChild);
+//            int depthRight = getDepth(root.rightChild);
+//            return depthLeft > depthRight ? (depthLeft+1) : (depthRight+1);
+//        }
+//    }
+
+    public int getDep(TreeNode node){
         if (root==null){
             return 0;
         }else {
-            int depthLeft = getDepth(root.leftChild);
-            int depthRight = getDepth(root.rightChild);
-            return depthLeft > depthRight ? (depthLeft+1) : (depthRight+1);
+            int depthLeft = getDep(root.leftChild);
+            int depthRight = getDep(root.rightChild);
+            return depthLeft<depthRight ? (depthLeft+1) : (depthRight+1);
         }
     }
 
