@@ -31,7 +31,7 @@ public class BinarySearch {
      * @return
      */
     public static int binarySearchRecur(int[] nums,int target,int low,int high) {
-        while (low>high){
+        if (low>high){
             return low;
         }
         int mid = low + (high-low)/2;

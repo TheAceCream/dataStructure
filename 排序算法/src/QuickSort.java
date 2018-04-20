@@ -23,7 +23,7 @@ public class QuickSort {
     private static void quickSort(int[] value, int start, int end) {
         int left = start;
         int right = end;
-        int key = value[start];
+        int key = value[left];
         while (left<right){
             while (left<right&&value[right]>=key){
                 right--;
